@@ -39,20 +39,26 @@ h1 {
 }
 label {
   display: block;
-  margin-top: 15px;
+  margin: 15px;
   font-weight: bold;
+  font-size: 20px;
 }
 input {
   width: 100%;
-  height: 30px;
+  height: 40px;
   padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
+  margin: 0px;
+  border-radius: 20px;
   border: 2px solid #ccc;
   outline: none;
   background: darkcyan;
   color: #fff;
   font-size: 20px;
+  transition: all 0.5s ease;
+}
+
+input:focus {
+  transform: scale(1.05);
 }
 input::placeholder {
   color: #ccc;
@@ -65,9 +71,10 @@ button {
   background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 18px;
+  letter-spacing: 1px;
 }
 
 table td button {
@@ -97,6 +104,7 @@ td {
   padding: 10px;
   text-align: center;
   background: #000;
+  border-radius: 5px;
 }
 th {
   background-color: #008b8b;
@@ -104,7 +112,9 @@ th {
 }
 .export-buttons {
   margin-top: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
@@ -112,13 +122,14 @@ th {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.content .box {
+  display: flex;
+}
 .inputs {
   margin: 10px;
 }
 .calculate {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .calculate .calculate1 {
@@ -129,6 +140,7 @@ th {
   border: 2px solid #fff;
   transition: all 0.3s ease;
   transform: scale(1.03);
+  border-radius: 30px;
 }
 .calculate .calculate1:hover {
   background: #008b8b;
@@ -139,9 +151,10 @@ th {
   font-size: 16px;
   font-weight: bold;
   transition: all 0.3s ease;
+  border-radius: 30px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .header img {
     width: 80px;
   }
@@ -153,7 +166,12 @@ th {
   }
 
   .content {
-    /* display: ruby; */
+    /* flex-direction: column;
+    margin: 50px; */
+  }
+
+  .content .box {
+    display: block;
   }
   .calculate .calculate1 {
     font-size: 20px;
@@ -177,5 +195,6 @@ th {
     font-size: 15px;
     padding: 2px;
     margin: 2px;
+    letter-spacing: 0;
   }
 }

@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>حاسبة أرباح الدواجن</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>حاسبة أرباح الدواجن</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container" id="resultsSection">
     <div class="header">
       <img src="logo-2.jpeg" alt="" srcset="" />
       <img src="logo.jpeg" alt="" srcset="" />
     </div>
     <h1>حاسبة أرباح مشروع الدواجن</h1>
-    <div class="container" id="resultsSection">
-      <div class="content">
-        <div class="box">
-          <div class="inputs">
-            <label>عدد الكتاكيت</label>
-            <input type="number" id="chickCount" placeholder="مثال: 100" />
-          </div>
-          <div class="inputs">
-            <label>سعر الكتكوت </label>
-            <input type="number" id="chickPrice" placeholder="مثال: 40" />
-          </div>
+    <div class="content">
+      <div class="box">
+        <div class="inputs">
+          <label>عدد الكتاكيت</label>
+          <input type="number" id="chickCount" placeholder="مثال: 100" />
         </div>
-        <div class="box">
-          <div class="inputs">
-            <label>سعر العلف للكيلو</label>
-            <input type="number" id="feedCost" placeholder="مثال: 22" />
-          </div>
-          <div class="inputs">
-            <label>سعر بيع الكيلو </label>
-            <input type="number" id="sellPerKilo" placeholder="مثال: 70" />
-          </div>
+        <div class="inputs">
+          <label>سعر الكتكوت </label>
+          <input type="number" id="chickPrice" placeholder="مثال: 40" />
         </div>
       </div>
-      <div class="calculate">
-        <button class="calculate1" onclick="calculate()">احسب</button>
-        <button class="danger calculate2" onclick="clearAll()">
-          مسح النتائج
-        </button>
+      <div class="box">
+        <div class="inputs">
+          <label>سعر العلف للكيلو</label>
+          <input type="number" id="feedCost" placeholder="مثال: 22" />
+        </div>
+        <div class="inputs">
+          <label>سعر بيع الكيلو </label>
+          <input type="number" id="sellPerKilo" placeholder="مثال: 70" />
+        </div>
       </div>
-      <div class="table-container">
-        <table id="resultTable">
-          <thead>
-            <tr>
-              <th>عدد الكتاكيت</th>
-              <th>تكلفة الكتاكيت</th>
-              <th>تكلفة العلف</th>
-              <th>الخدمات</th>
-              <th>التكلفة الإجمالية</th>
-              <th>الإيراد</th>
-              <th>ربح/فرخة</th>
-              <th>صافي الربح</th>
-              <th>🗑️</th>
-            </tr>
-          </thead>
-          <tbody id="resultsBody"></tbody>
-        </table>
-      </div>
+    </div>
+    <div class="calculate">
+      <button class="calculate1" onclick="calculate()">احسب</button>
+    </div>
+    <div class="table-container">
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th>عدد الكتاكيت</th>
+            <th>تكلفة الكتاكيت</th>
+            <th>تكلفة العلف</th>
+            <th>الخدمات</th>
+            <th>التكلفة الإجمالية</th>
+            <th>الإيراد</th>
+            <th>ربح/فرخة</th>
+            <th>صافي الربح</th>
+            <th> حذف 🗑️</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
 
-      <div class="export-buttons">
+    <div class="export-buttons">
+      <div class="">
         <button id="excelBtn">📊 تحميل Excel</button>
         <button onclick="downloadScreenshot()">📸 حفظ صورة</button>
       </div>
+      <button class="danger calculate2" onclick="clearAll()">
+        مسح النتائج
+      </button>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
